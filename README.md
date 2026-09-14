@@ -325,3 +325,38 @@ Good placement is important for achieving: Shorter interconnects Better timing L
 
 <img width="700" alt="fff" src="https://github.com/user-attachments/assets/01034e30-a816-4b06-9973-f2b66ca6f384" />
 
+# 23. OpenLane Configuration
+The project uses Tcl-based OpenLane configuration files to define the physical-design flow. Typical configuration variables include:
+```text
+set ::env(DESIGN_NAME) "picorv32a"
+
+set ::env(VERILOG_FILES) \
+    "$::env(DESIGN_DIR)/src/picorv32a.v"
+
+set ::env(SDC_FILE) \
+    "$::env(DESIGN_DIR)/src/picorv32a.sdc"
+
+set ::env(CLOCK_PERIOD) "5.000"
+set ::env(CLOCK_PORT) "clk"
+
+set ::env(FP_CORE_UTIL) 50
+set ::env(FP_ASPECT_RATIO) 1
+```
+
+# 24. Timing Constraints
+The design uses an SDC file to define timing constraints. Important timing parameters include: Clock period Clock port Input delays Output delays Timing uncertainty For example:
+```text
+create_clock \
+    -name clk \
+    -period 5.0 \
+    [get_ports clk]
+```
+A correct timing constraint setup is necessary for timing-driven synthesis, placement, and routing.
+
+# 25. OpenROAD / Layout View
+The physical layout can be inspected using OpenROAD-based tools. The screenshots demonstrate a layout containing: Standard-cell rows Power structures Cell instances Core boundaries I/O regions Metal layers The layout view allows the physical implementation to be visually inspected before final signoff.
+
+# 26.Bind netlist with physical library cells
+Logical cells such as FF1, FF2, etc. are mapped to their corresponding physical standard cells from the technology library.
+
+<img width="700" alt="Bind Netlist" src="https://github.com/user-attachments/assets/665e6f49-779e-495d-abf5-778c9ed7e57a" />
