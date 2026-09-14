@@ -134,3 +134,16 @@ Area = Width × Height
      = 1 sq. unit
 ```
 The total area occupied by the netlist is calculated by adding the area of all standard cells and flip-flops. This gives the total cell area required inside the core.
+
+
+# 4. Utilization Factor and Aspect Ratio
+Two important parameters used to define the core dimensions are: Utilization Factor
+```text
+Utilization Factor =
+Area Occupied by Netlist
+-------------------------
+Total Area of Core
+```
+Screenshot (120)
+The utilization factor indicates how much of the core area is occupied by the placed cells. Aspect Ratio Aspect Ratio = Height / Width For the example shown, the core and die dimensions are selected based on the required utilization factor and aspect ratio. The diagram illustrates a core of approximately 4 units × 2 units with the die surrounding the core.
+
