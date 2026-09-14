@@ -360,3 +360,11 @@ The physical layout can be inspected using OpenROAD-based tools. The screenshots
 Logical cells such as FF1, FF2, etc. are mapped to their corresponding physical standard cells from the technology library.
 
 <img width="700" alt="Bind Netlist" src="https://github.com/user-attachments/assets/665e6f49-779e-495d-abf5-778c9ed7e57a" />
+
+# 27.Key Learnings
+Through this module, the following concepts were studied: Understanding a netlist Converting logical cells into physical dimensions Cell area calculation Core and die dimensions Utilization factor Aspect ratio Pre-placed cells IP blocks Floorplanning Placement of pre-placed cells Switching current Peak current IR/voltage drop due to resistance and inductance Noise margin Noise-induced voltage bumps Decoupling capacitors Decoupling capacitor placement Power integrity Driver and load connectivity Multi-bit bus considerations
+
+# 28.Conclusion
+Chip floorplanning is a critical stage of ASIC physical design. The dimensions of the core and die must be selected based on cell area, utilization factor, and aspect ratio. Pre-placed cells and IP blocks must be positioned carefully to achieve good connectivity and efficient routing. During switching, large instantaneous current demand can cause voltage fluctuations because of resistance and inductance in the power network. Noise margin determines the ability of the circuit to tolerate such disturbances. Decoupling capacitors provide local charge during high-current switching events and help maintain supply stability. Thus, proper floorplanning, pre-placed-cell placement, power planning, noise-margin analysis, and decoupling-capacitor placement are essential for reliable physical design.
+
+
