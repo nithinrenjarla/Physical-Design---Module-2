@@ -92,3 +92,45 @@ Overall, this project provides a step-by-step understanding of how an ASIC desig
 | **KLayout / Layout Viewer** |	Visualization and inspection of physical layouts |
 | **Linux / Ubuntu** |	Development and execution environment |
 | **GitHub** |	Project documentation and version control |
+
+# 1. Define Width and Height of Core and Die
+The first step in physical design is to understand the netlist and convert the logical representation of the design into physical dimensions.
+
+A netlist describes the connectivity between different components of an electronic design.
+
+The example netlist contains:
+
+Flip-Flops (FF)
+AND gate
+OR gate
+Clock connection
+Data connections
+The standard cells and flip-flops in the netlist are later converted into physical dimensions during floorplanning.
+
+
+# 2. Convert Netlist Symbols into Physical Dimensions
+After understanding the netlist, the logical components are represented as physical standard cells.
+
+The highlighted elements include:
+
+Flip-Flops
+Standard cells
+AND/OR logic cells
+Each logical cell occupies a certain physical area on the silicon.
+
+Therefore, the total area occupied by all cells must be calculated before determining the core dimensions.
+
+
+# 3. Calculate Area Occupied by the Netlist
+For the given example, each standard cell and flip-flop is represented as a unit square.
+
+For example:
+``` text 
+Width  = 1 unit
+Height = 1 unit
+
+Area = Width × Height
+     = 1 × 1
+     = 1 sq. unit
+```
+The total area occupied by the netlist is calculated by adding the area of all standard cells and flip-flops. This gives the total cell area required inside the core.
