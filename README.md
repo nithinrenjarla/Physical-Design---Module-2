@@ -295,9 +295,12 @@ The project examines the physical organization of power structures across the ch
 # 18. Picorv32a ASIC Design Flow using OpenLane
 OpenLane is an automated, open-source RTL-to-GDSII hardware design framework. It automatically transforms human-readable hardware description code (Verilog RTL) into the final physical layout blueprint (GDSII) required to manufacture a physical silicon microchip.The picorv32a is an optimized RISC-V CPU core used as a design benchmark in this automated flow.The config.tcl file acts as the configuration hub for this process. It defines critical hardware parameters—such as target layout names, input file paths, and the required clock speeds—to guide the software engines through synthesis, placement, and routing without human intervention.
 
+<img width="700" alt="config tcl" src="https://github.com/user-attachments/assets/ce05cd3a-5201-42f2-84e8-ddee5d5dde92" />
 
 # 20. Openlane Physical Design Configuration (sky130_fd_sc_hd)
 In the OpenLane ASIC design flow, the hardware description language (HDL) code is transformed into a physical layout. This process relies heavily on configuration files (.tcl) to define constraints and optimization goals for the synthesis, floorplanning, placement, and routing stages.The configuration snippet specifically targets the sky130_fd_sc_hd standard cell library (SkyWater 130nm High Density) and establishes several foundational parameters:Synthesis & Timing Control: Variables like SYNTH_MAX_FANOUT define the maximum number of digital inputs that a single logic gate output can drive, balancing signal integrity and delay. The CLOCK_PERIOD sets the targeted clock cycle time in nanoseconds, defining the performance constraint for static timing analysis (STA).Floorplanning & Density: The utilization variables specify how much of the core area will be occupied by standard cells. The core utilization (FP_CORE_UTIL) sets the initial budget, while PL_TARGET_DENSITY dynamically calculates the targeted placement density, ensuring cells are optimally packed without causing unroutable congestion during the physical implementation stage.
+
+<img width="500" alt="config tcl" src="https://github.com/user-attachments/assets/89bca7a9-0149-4367-b4ad-6b1ba43aee83" />
 
 
 # 21.OpenLane Floorplanning Configuration
@@ -311,7 +314,14 @@ FP_WELLTAP_CELL / FP_ENDCAP_CELL: The specific physical layout cell names used f
  # Taps, Tie-offs, and IO Extensions
 FP_TAPCELL_DIST: Defines the horizontal distance limits between adjacent welltap columns across the layout row structures. (Default: 14). FP_IO_VEXTEND / FP_IO_HEXTEND: Extends the routing pins slightly outside the core/die perimeter to make external macro routing simpler. FP_IO_VLENGTH / FP_IO_HLENGTH: Dictates the absolute length of vertical and horizontal physical pins. (Default: 4). FP_IO_VTHICKNESS_MULT / FP_IO_HTICKNESS_MULT: A multiplier value scaling the thickness of pins over the standard minimum layer widths.
 
-
+<img width="700" alt="floor planning" src="https://github.com/user-attachments/assets/e448144f-42af-4caf-bb40-eef051036227" />
 
 # 22. Standard Cell Placement
 After floorplanning and power planning, logical cells are placed inside the core region. The placement process determines the physical location of: Combinational cells Sequential cells Buffers Inverters Logic gates Other standard cells The screenshots demonstrate the placement of cells in organized rows inside the defined core area.
+
+<img width="500" alt="f command" src="https://github.com/user-attachments/assets/f7b5cb78-bd29-46b9-895b-b94e4821b0ae" />
+
+Good placement is important for achieving: Shorter interconnects Better timing Lower congestion Efficient routing Lower power consumption.
+
+<img width="700" alt="fff" src="https://github.com/user-attachments/assets/01034e30-a816-4b06-9973-f2b66ca6f384" />
+
