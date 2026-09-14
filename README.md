@@ -76,3 +76,19 @@ Overall, this project provides a step-by-step understanding of how an ASIC desig
 31 - Bind Netlist with Physical Library Cells
 
 32 - Placement
+
+# Tools and Technologies
+
+| Tool / Technology |	Purpose |
+|---|---|
+| **OpenLane** | Automated open-source RTL-to-GDSII ASIC design flow |
+| **OpenROAD** | Physical design implementation and layout visualization |
+| **SKY130 PDK** |	Open-source 130 nm process design kit |
+| **sky130_fd_sc_hd** |	High-density standard-cell library |
+| **LEF Files**	|Physical abstraction of standard cells, pins, layers, and obstructions |
+| **Tcl** |	Configuration and automation of the OpenLane flow |
+| **Verilog** |	Hardware description of the design |
+| **SDC** |	Timing and clock constraint definition |
+| **KLayout / Layout Viewer** |	Visualization and inspection of physical layouts |
+| **Linux / Ubuntu** |	Development and execution environment |
+| **GitHub** |	Project documentation and version control |
